@@ -16,6 +16,7 @@ func TestAddSuccessfully(t *testing.T) {
 	}
 }
 
+// Clean test
 func TestAddSuccessfullyTestify(t *testing.T) {
 	c := require.New(t)
 
