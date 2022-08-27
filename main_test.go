@@ -1,6 +1,8 @@
 package main
 
 import (
+	"errors"
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/require"
@@ -35,4 +37,28 @@ func TestFibonacci(t *testing.T) {
 	expected := 55
 
 	c.Equal(expected, result)
+}
+
+func TestFact(t *testing.T) {
+	c := require.New(t)
+
+	testCases := []struct {
+		number   int
+		expected int
+	}{
+		{0, 1},
+		{2, 2},
+		{4, 24},
+	}
+
+	for i, e := range testCases {
+		t.Run(fmt.Sprintf("test-case-%d", i), func(t *testing.T) {
+			t.Parallel()
+			out := fact(e.number)
+			if out != e.expected {
+				n := errors.New("error")
+				c.NoError(n)
+			}
+		})
+	}
 }
