@@ -26,3 +26,13 @@ func TestAddSuccessfullyTestify(t *testing.T) {
 
 	c.Equal(expect, result)
 }
+
+func TestFibonacci(t *testing.T) {
+	c := require.New(t)
+
+	result := fibonacciQuick(10)
+
+	expected := 55
+
+	c.Equal(expected, result)
+}
