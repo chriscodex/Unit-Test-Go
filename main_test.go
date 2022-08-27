@@ -22,7 +22,7 @@ func TestAddSuccessfullyTestify(t *testing.T) {
 
 	result := Add(100, 150)
 
-	expect := 230
+	expect := 250
 
 	c.Equal(expect, result)
 }
